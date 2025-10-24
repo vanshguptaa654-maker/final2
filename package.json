@@ -2,9 +2,9 @@
   "name": "vercel-dynamic-app",
   "version": "1.0.0",
   "description": "Dynamic Node.js/Express app deployed on Vercel.",
-  "main": "api/index.js",
+  "main": "serverside.js",
   "scripts": {
-    "start": "node api/index.js"
+    "start": "node serverside.js"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -17,4 +17,5 @@
     "razorpay": "^2.9.2"
     
   }
+
 }
