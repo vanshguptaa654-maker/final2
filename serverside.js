@@ -246,7 +246,7 @@ function calculateItemPriceServer(itemData, requestedQuantity, requestedUnit, ha
 
 
 // Immediately invoked async function to connect to DB and start the server
-(async () => {
+
     await connectDB(); // Connect to DB when server starts
     await createIndexes(); // Create indexes after connecting
 
@@ -1229,7 +1229,8 @@ function calculateItemPriceServer(itemData, requestedQuantity, requestedUnit, ha
             res.status(500).json({ error: 'Failed to process order.', details: err.message });
         }
     });
-})();
+
     // Start the Express server and listen on the specified port
    module.exports = app;
+
 
