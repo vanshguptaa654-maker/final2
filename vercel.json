@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "rewrites": [
+    
+    {
+      "source": "/customer/order/:userId/:storeName",
+      "destination": "/public/index.html"
+    },
+    
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/serverside.js"
+    },
+   
+    {
+      "source": "/(.*)",
+      "destination": "/public/index.html"
+    }
+  ]
+}
