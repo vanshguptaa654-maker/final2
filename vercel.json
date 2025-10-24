@@ -1,11 +1,6 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "serverside.js",
-      "use": "@vercel/node"
-    }
-  ],
+
   "rewrites": [
    
     {
@@ -26,3 +21,4 @@
     }
   ]
 }
+
