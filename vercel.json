@@ -1,11 +1,16 @@
 {
   "version": 2,
-  
+  "builds": [
+    {
+      "src": "serverside.js",
+      "use": "@vercel/node"
+    }
+  ],
   "rewrites": [
-
+   
     {
       "source": "/customer/order/:userId/:storeName",
-      "destination": "/index.html" 
+      "destination": "/index.html"
     },
     
    
@@ -14,12 +19,10 @@
       "destination": "/serverside.js" 
     },
     
-   
+  
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/index.html" 
     }
   ]
 }
-
-
