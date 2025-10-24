@@ -1,20 +1,28 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "serverside.js", // Look for serverside.js in the root
+      "use": "@vercel/node" // Treat it as a Node.js serverless function
+    }
+  ],
   "rewrites": [
-    
+    // 1. Route the dynamic URL to your static HTML file in the root
     {
       "source": "/customer/order/:userId/:storeName",
-      "destination": "/public/index.html"
+      "destination": "/index.html" // Points to the file in the root
     },
     
+    // 2. Route ALL backend calls (/backend/...) to your serverside.js file
     {
-      "source": "/api/(.*)",
-      "destination": "/api/serverside.js"
+      "source": "/backend/(.*)",
+      "destination": "/serverside.js" // Points to the file in the root
     },
-   
+    
+    // 3. Fallback: Any other path goes to index.html
     {
       "source": "/(.*)",
-      "destination": "/public/index.html"
+      "destination": "/index.html"
     }
   ]
 }
