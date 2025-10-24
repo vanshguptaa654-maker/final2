@@ -246,7 +246,7 @@ function calculateItemPriceServer(itemData, requestedQuantity, requestedUnit, ha
 
 
 // Immediately invoked async function to connect to DB and start the server
-(async () => {
+
     await connectDB(); // Connect to DB when server starts
     await createIndexes(); // Create indexes after connecting
 
@@ -1231,14 +1231,4 @@ function calculateItemPriceServer(itemData, requestedQuantity, requestedUnit, ha
     });
 
     // Start the Express server and listen on the specified port
-    app.listen(port, () => {
-        console.log(`Server listening at http://localhost:${port}`);
-        console.log('Remember to ensure your MongoDB server is running!');
-        console.log('If populating initial data, run MongoDB shell commands (see instructions below).');
-        
-        // Final check on API keys
-        if (!RAZORPAY_KEY_ID || !RAZORPAY_KEY_SECRET) {
-            console.error('\n!!! WARNING: RAZORPAY_KEY_ID or RAZORPAY_KEY_SECRET is MISSING in environment variables. Razorpay integration will fail. !!!\n');
-        }
-    });
-})();
+   module.exports = app;
